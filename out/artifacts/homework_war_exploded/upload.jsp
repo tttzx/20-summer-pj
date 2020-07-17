@@ -22,7 +22,7 @@
     </div>
     <hr>
     <div class="row">
-        <form action="/upload" method="post">
+        <form action="/upload" enctype="multipart/form-data" method="post">
             <div class="col-lg-4">
                 <p>选择您要上传的图片：</p>
                 <img name="showimg" id="showimg" style="display: none;width: 100%" alt="图片">

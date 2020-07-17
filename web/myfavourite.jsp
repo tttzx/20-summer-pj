@@ -97,7 +97,6 @@
                 "        </nav>" +
                 "</div>";
         }
-        console.log(str);
         $('#favourResult').empty().html(str);
     }
 </script>

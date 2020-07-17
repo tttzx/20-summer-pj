@@ -73,11 +73,12 @@ public class RegionDAO {
     }
     public static String getCityCode(String name){
         Connection conn = jdbcUtil.getConnection();
-        String sql = "SELECT * from geocities WHERE AsciiName '" + name +"'";
+        String sql = "SELECT * from geocities WHERE AsciiName = ?";
         PreparedStatement pst = null;
         ResultSet rs = null;
         try {
             pst = conn.prepareStatement(sql);
+            pst.setString(1,name);
             rs = pst.executeQuery();
             if (rs.next())
                 return rs.getString("GeoNameID");

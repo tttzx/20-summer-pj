@@ -18,7 +18,8 @@ public class MyPhotoServlet extends HttpServlet {
         HttpSession session = request.getSession();
         String username= (String)session.getAttribute("username");
         List<Picture> pictures = PictureDAO.findMyPhoto(username);
-        request.setAttribute("myPictures",pictures);
+        String json =PictureDAO.parseToJson(pictures);
+        request.setAttribute("myPictures",json);
         request.getRequestDispatcher("myphoto.jsp").forward(request, response);
     }
 

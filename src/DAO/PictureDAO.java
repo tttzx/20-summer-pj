@@ -211,7 +211,47 @@ public class PictureDAO {
             jdbcUtil.close(null, pst, conn);
         }
 
+    }
 
+    public static void update(Picture picture){
+        Connection conn = jdbcUtil.getConnection();
+        String sql="update travelimage SET Title = ?,Description=?,CityCode=?,Country_RegionCodeISO=?," +
+                "UID=?,PATH=?,Content=?,likeperson=? WHERE ImageID= ?";
+        PreparedStatement pst = null;
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.setString(1, picture.getTitle());
+            pst.setString(2, picture.getDescription());
+            pst.setString(3, RegionDAO.getCityCode(picture.getCityName()));
+            pst.setString(4, RegionDAO.getCountryISO(picture.getCountryName()));
+            pst.setString(5, UserDAO.getID(picture.getAuthor()));
+            pst.setString(6,picture.getPath());
+            pst.setString(7,picture.getContent());
+            pst.setInt(8,0);
+            pst.setString(9,picture.getID());
+            pst.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            jdbcUtil.close(null, pst, conn);
+        }
+    }
+
+    public static void delete(String id){
+        Connection conn = jdbcUtil.getConnection();
+        String sql="DELETE FROM travelimage WHERE ImageID="+id;
+        String sql2="DELETE FROM travelimagefavor WHERE ImageID="+id;
+        PreparedStatement pst = null;
+        try {
+            pst = conn.prepareStatement(sql);
+            pst.execute();
+            pst=conn.prepareStatement(sql2);
+            pst.execute();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            jdbcUtil.close(null, pst, conn);
+        }
 
     }
 

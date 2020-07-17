@@ -1,7 +1,6 @@
 package Servlet.PicServlet;
 
 import DAO.PictureDAO;
-import DAO.UserDAO;
 import Entity.Picture;
 import org.apache.commons.fileupload.FileItem;
 import org.apache.commons.fileupload.FileUploadException;
@@ -10,14 +9,17 @@ import org.apache.commons.fileupload.servlet.ServletFileUpload;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.*;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.File;
 import java.io.IOException;
 import java.util.Iterator;
 import java.util.List;
 
-@WebServlet(name = "UpLoadServlet", value = "/upload")
-public class UpLoadServlet extends HttpServlet {
+@WebServlet(name = "UpdateServlet", value = "/update")
+public class UpdateServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
@@ -44,6 +46,10 @@ public class UpLoadServlet extends HttpServlet {
                 //获取value值，声明代码编码
                 String value = fileItem.getString("utf-8");
                 switch (fileItem.getFieldName()) {
+                    case "id":
+                        picture.setID(value);
+                        picture.setPath(PictureDAO.findPic(value).getPath());
+                        break;
                     case "title":
                         picture.setTitle(value);
                         break;
@@ -73,12 +79,11 @@ public class UpLoadServlet extends HttpServlet {
                 }
             }
         }
-
-        PictureDAO.save(picture);
+        PictureDAO.update(picture);
         request.getRequestDispatcher("/myPhoto").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        doPost(request, response);
+      doPost(request,response);
     }
 }
