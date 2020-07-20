@@ -22,7 +22,7 @@
     </div>
     <hr>
     <div class="row">
-        <form action="/upload" enctype="multipart/form-data" method="post">
+        <form action="/upload" onsubmit="return checkDefault()" enctype="multipart/form-data" method="post">
             <div class="col-lg-4">
                 <p>选择您要上传的图片：</p>
                 <img name="showimg" id="showimg" style="display: none;width: 100%" alt="图片">
@@ -40,7 +40,9 @@
                 </div>
                 <div class="form-group">
                     <label>国家和地区：</label>
-                    <select class="form-control" id="country" name="country" style="width: 30%;" onchange="getCity()" required>
+                    <select class="form-control" id="country" name="country" style="width: 30%;" onchange="getCity()"
+                            required>
+                        <option value="default" selected> 请选择</option>
                         <%
                             List<String> allCountries = RegionDAO.getAllCountries();
                             for (String country : allCountries) {
@@ -50,6 +52,7 @@
                     </select>
                     &nbsp;
                     <select class="form-control" id="region" name="region" style="width: 30%;" required>
+                        <option value="default" selected> 无 </option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -79,6 +82,7 @@
         var country = $("#country").val();
         var city = $("#region");
         var cities;
+
         $.ajax({
             type: "post",
             async: false,
@@ -92,10 +96,8 @@
                 alert("请求出错");
             }
         });
-        console.log(cities);
         if (cities) {
-            city.html(fillContents(cities));
-        }
+            city.empty().html(fillContents(cities));
     }
 
     function fillContents(contents) {
@@ -104,6 +106,17 @@
             str += '<option value=\"' + contents[i] + '\">' + contents[i] + '</option>';
         }
         return str;
+    }
+
+    function checkDefault() {
+        var country = $("#country").val();
+        var region = $("#region").val();
+        if(country === "default" || region === "default"){
+            alert("请正确填写国家和地区");
+            return false;
+        }else {
+            return true;
+        }
     }
 
 </script>

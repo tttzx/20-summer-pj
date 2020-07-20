@@ -17,36 +17,35 @@
 <body>
 <%@include file="navbar.jsp" %>
 <div class="container">
-    <div class="row">
-        <div class="page-header"><h1>搜索</h1></div>
-    </div>
+    <div class="title"><h3><span class="glyphicon glyphicon-search"></span>搜索</h3></div>
+    <hr>
     <form onsubmit="return false;" class="form-horizontal" role="form">
-    <div class="row" style="padding: 5px;">
-        <div class="col-md-6">
-            <div class="input-group">
-                <input type="text" name="text" id="text" class="form-control" placeholder="Search for..." required>
-                <span class="input-group-btn">
+        <div class="row" style="padding: 5px;">
+            <div class="col-md-6">
+                <div class="input-group">
+                    <input type="text" name="text" id="text" class="form-control" placeholder="Search for..." required>
+                    <span class="input-group-btn">
                     <input class="btn btn-default" type="submit" id="submit" value="搜索">
                 </span>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-offset-1 col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="type" value="title" checked>搜索标题</label>
-                <label><input type="radio" name="type" value="content">搜索主题</label>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-6">
+                <div class="radio">
+                    <label><input type="radio" name="type" value="title" checked>搜索标题</label>
+                    <label><input type="radio" name="type" value="content">搜索主题</label>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-offset-1 col-md-6">
-            <div class="radio">
-                <label><input type="radio" name="order" value="likeperson" checked>按热度排序</label>
-                <label><input type="radio" name="order" value="imageID">按时间排序</label>
+        <div class="row">
+            <div class="col-md-offset-1 col-md-6">
+                <div class="radio">
+                    <label><input type="radio" name="order" value="likeperson" checked>按热度排序</label>
+                    <label><input type="radio" name="order" value="imageID">按时间排序</label>
+                </div>
             </div>
         </div>
-    </div>
     </form>
 
 
@@ -71,13 +70,13 @@
 
     function showPage(page) {
         var str = "";
-        if (result===null) {
+        if (result === null) {
             str = '<div class="row">\n' +
                 '        <p class="text-muted">抱歉，没有找到相关图片。</p>\n' +
                 '        </div>';
         } else {
             str = '<div class="row">\n' +
-                '        <p class="text-muted">共找到<strong> '+totalCount+' </strong>个结果：</p>\n' +
+                '        <p class="text-muted">共找到<strong> ' + totalCount + ' </strong>个结果：</p>\n' +
                 '        </div>';
             for (var i = (page - 1) * pageSize; i < page * pageSize && i < result.length; i++) {
                 str += "<div class=\"col-md-3\">\n" +
@@ -85,8 +84,8 @@
                     "                <img class=\"card-img-top\" src=\"travel-images/square-medium/" + result[i].PATH + "\" style=\"width:100%\">\n" +
                     "                <div class=\"card-body\">\n" +
                     "                    <h4 class=\"card-title\">" + result[i].Title + "</h4>\n" +
-                    "                    <p>作者："+result[i].Author+"</p>\n" +
-                    "                    <p>收藏人数："+result[i].likeperson+"</p>\n" +
+                    "                    <p>作者：" + result[i].Author + "</p>\n" +
+                    "                    <p>收藏人数：" + result[i].likeperson + "</p>\n" +
                     "                    <a href=\"/detail?id=" + result[i].ImageID + "\" class=\"btn btn-primary\">详情</a>\n" +
                     "                </div>\n" +
                     "            </div>\n" +
@@ -106,7 +105,7 @@
                 if (page === i) {
                     str += "<li class='active'><a>" + i + "</a></li>";
                 } else {
-                    str += "<li><a href='javascript:showPage("+ i + ");'>" + i + "</a></li>";
+                    str += "<li><a href='javascript:showPage(" + i + ");'>" + i + "</a></li>";
                 }
             }
 
@@ -136,7 +135,7 @@
                 timeout: 30000,
                 success: function (data) {
                     result = JSON.parse(data).results;
-                    if (result!= null ) {
+                    if (result != null) {
                         totalCount = result.length;
                         totalPage = Math.ceil(totalCount / pageSize);
                     }

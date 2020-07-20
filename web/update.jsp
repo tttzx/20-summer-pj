@@ -31,7 +31,7 @@
             <div class="col-lg-4">
                 <p>选择您要上传的图片：</p>
                 <img name="showimg" src="travel-images/large/<%=picture.getPath()%>" id="showimg" style="width: 100%" alt="图片">
-                <input name="file" type="file" id="upfile" size="40" onchange="viewmypic(showimg,this.form.upfile);"
+                <input name="file" type="file" id="upfile" size="40"  onchange="viewmypic(showimg,this.form.upfile);"
                        accept="image/gif, image/jpeg" >
             </div>
             <div class="col-lg-7 col-lg-offset-1">
