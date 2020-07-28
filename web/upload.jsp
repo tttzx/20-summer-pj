@@ -52,7 +52,7 @@
                     </select>
                     &nbsp;
                     <select class="form-control" id="region" name="region" style="width: 30%;" required>
-                        <option value="default" selected> 无 </option>
+                        <option value="default" selected> 无</option>
                     </select>
                 </div>
                 <div class="form-group">
@@ -98,24 +98,25 @@
         });
         if (cities) {
             city.empty().html(fillContents(cities));
-    }
-
-    function fillContents(contents) {
-        var str;
-        for (var i = 0; i < contents.length; i++) {
-            str += '<option value=\"' + contents[i] + '\">' + contents[i] + '</option>';
         }
-        return str;
-    }
 
-    function checkDefault() {
-        var country = $("#country").val();
-        var region = $("#region").val();
-        if(country === "default" || region === "default"){
-            alert("请正确填写国家和地区");
-            return false;
-        }else {
-            return true;
+        function fillContents(contents) {
+            var str;
+            for (var i = 0; i < contents.length; i++) {
+                str += '<option value=\"' + contents[i] + '\">' + contents[i] + '</option>';
+            }
+            return str;
+        }
+
+        function checkDefault() {
+            var country = $("#country").val();
+            var region = $("#region").val();
+            if (country === "default" || region === "default") {
+                alert("请正确填写国家和地区");
+                return false;
+            } else {
+                return true;
+            }
         }
     }
 

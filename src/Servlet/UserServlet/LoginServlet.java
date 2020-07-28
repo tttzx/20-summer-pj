@@ -28,7 +28,7 @@ public class LoginServlet extends HttpServlet {
             }else {
                 request.setAttribute("info", "Sorry!Can't find user");
             }
-            request.getRequestDispatcher("message.jsp").forward(request, response);
+        response.sendRedirect(request.getHeader("Referer"));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

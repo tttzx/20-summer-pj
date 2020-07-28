@@ -9,8 +9,7 @@
 
         <ul class="nav navbar-nav">
             <li><a href="index.jsp">主页</a></li>
-            <li><a href="search.jsp">搜索</a></li>
-            <li><a href="#">其他</a></li>
+            <li><a href="search.jsp">检索图片</a></li>
         </ul>
 
         <ul class="nav navbar-nav navbar-right">
@@ -24,7 +23,7 @@
                     <li><a href="/myfavour">我的收藏</a></li>
                     <li><a href="upload.jsp">上传图片</a></li>
                     <li><a href="/myPhoto">我的图片</a></li>
-                    <li><a href="myfriend.jsp">我的好友</a></li>
+                    <li><a href="/myFriend">我的好友</a></li>
                 </ul>
             </li>
             <li><a href="./logout"><span class="glyphicon glyphicon-log-out"></span> 登出</a></li>

@@ -34,8 +34,10 @@
     var result;
     var data ='<%=request.getAttribute("myPictures")%>';
     result = JSON.parse(data).results;
-    totalCount = result.length;
-    totalPage = Math.ceil(totalCount / pageSize);
+    if(result!==null) {
+        totalCount = result.length;
+        totalPage = Math.ceil(totalCount / pageSize);
+    }
 
     showMyPage(1);
 

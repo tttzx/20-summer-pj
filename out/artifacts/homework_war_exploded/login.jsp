@@ -19,7 +19,7 @@
     <div class="page-header">
         <h1>请登录：</h1><br>
     </div>
-    <form action="./login" method="post" onsubmit="return checkLogin()" class="form-horizontal" role="form">
+    <form method="post" onsubmit="return checkLogin()" class="form-horizontal" role="form">
         <div class="form-group">
             <label class="col-sm-2 control-label">Email/Username:</label>
             <div class="col-sm-5">
@@ -56,34 +56,36 @@
         var status = false;
         var message = $('#message').val();
         var password = $('#password').val();
-        $.ajax({
-            type: "post",
-            async: false,
-            url: "./loginCheck",
-            data: {"message": message, "password": password},
-            timeout: 30000,
-            data_type: 'json',
-            success: function (data) {
-                if (data === "OK") {
-                    status = true;
-                } else if (data === "NO") {
-                    status = false;
-                } else {
-                    status = false;
+        if ($('#verify').val() !== _picTxt) {
+            alert("验证码错误");
+            return false;
+        }else {
+            $.ajax({
+                type: "post",
+                async: false,
+                url: "./loginCheck",
+                data: {"message": message, "password": password},
+                timeout: 30000,
+                data_type: 'json',
+                success: function (data) {
+                    if (data === "OK") {
+                        status = true;
+                    } else if (data === "NO") {
+                        status = false;
+                    } else {
+                        status = false;
+                    }
                 }
-            }
-        });
-        if (status) {
-            if ($('#verify').val() !== _picTxt) {
-                alert("验证码错误");
+            });
+            if (status) {
+                return true;
+            } else {
+                alert("用户名或密码错误");
+                $('#password').val("");
                 return false;
             }
-            return true;
-        } else {
-            alert("用户名或密码错误");
-            $('#password').val("");
-            return false;
         }
+
     }
 
     //绘制验证码

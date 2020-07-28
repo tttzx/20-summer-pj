@@ -17,9 +17,9 @@ public class JdbcUtilTest {
             pst = conn.prepareStatement(sql);
             rs = pst.executeQuery();
             // 输出数据库中所有database的名字
-            while (rs.next()) { // 迭代器
-                System.out.println(rs.getString("UserName"));
-            }
+//            while (rs.next()) { // 迭代器
+//                System.out.println(rs.getString("UserName"));
+//            }
         } catch (SQLException e) {
             e.printStackTrace();
         } finally {

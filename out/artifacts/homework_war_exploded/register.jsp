@@ -82,12 +82,12 @@
             $.ajax({
                 type: "post",
                 async: false,
-                url: "./checkName",
+                url: "./checkUser",
                 data: {"name": name},
                 timeout: 30000,
                 data_type: 'json',
                 success: function (data) {
-                    if (data === "OK") {
+                    if (data === "NameOK") {
                         $("#nameGroup").removeClass("has-error");
                         $("#helpBlock1").html("");
                         namecheck =true;
@@ -105,17 +105,36 @@
         }
     }
 
+    var emailcheck=false;
     function checkEmail() {
         var email = $("#email").val();
         var pattern = /^([A-Za-z0-9_\-.\u4e00-\u9fa5])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,8})$/;
         if (pattern.test(email)) {
             $("#emailGroup").removeClass("has-error");
             $("#helpBlock2").html("");
-            return true;
+            $.ajax({
+                type: "post",
+                async: false,
+                url: "./checkUser",
+                data: {"email": email},
+                timeout: 30000,
+                data_type: 'json',
+                success: function (data) {
+                    if (data === "EmailOK") {
+                        $("#emailGroup").removeClass("has-error");
+                        $("#helpBlock2").html("");
+                        emailcheck =true;
+                    } else {
+                        $("#emailGroup").addClass("has-error");
+                        $("#helpBlock2").html("该邮箱已注册");
+                        emailcheck=false;
+                    }
+                }
+            });
         } else {
             $("#emailGroup").addClass("has-error");
             $("#helpBlock2").html("请输入正确的邮箱地址");
-            return false;
+            emailcheck = false;
         }
     }
 
@@ -183,7 +202,7 @@
     }
 
     function check() {
-        if (namecheck && checkEmail() && checkPassWord() && checkRePass()) {
+        if (namecheck && emailcheck && checkPassWord() && checkRePass()) {
             if ($('#verify').val() !== _picTxt) {
                 alert("验证码错误");
                 return false;

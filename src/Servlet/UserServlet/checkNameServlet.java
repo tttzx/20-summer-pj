@@ -10,17 +10,26 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet(name = "checkNameServlet", value = "/checkName")
+@WebServlet(name = "checkNameServlet", value = "/checkUser")
 public class checkNameServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        String name=request.getParameter("name");
-        PrintWriter out=null;
+        String name = request.getParameter("name");
+        String email = request.getParameter("email");
+        PrintWriter out = null;
         try {
             out = response.getWriter();
-            if(UserDAO.findUser(name)==null){
-                out.print("OK");
-            }else {
-                out.print("Exist");
+            if (name != null) {
+                if (UserDAO.findUser(name) == null) {
+                    out.print("NameOK");
+                } else {
+                    out.print("NameExist");
+                }
+            } else if(email !=null){
+                if (UserDAO.findUser(email) == null) {
+                    out.print("EmailOK");
+                } else {
+                    out.print("EmailExist");
+                }
             }
         } catch (Exception e) {
             e.printStackTrace();

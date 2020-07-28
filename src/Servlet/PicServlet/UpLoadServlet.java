@@ -34,8 +34,9 @@ public class UpLoadServlet extends HttpServlet {
             e.printStackTrace();
         }
 
-        String imgName;
-        String[] filePath = {"C:\\Users\\surface\\Desktop\\卓越软件开发\\project\\20-summer-pj\\web\\travel-images\\large\\"};//地址
+        String imgName="";
+        String[] filePath = {getServletContext().getRealPath("/travel-images")+"\\large\\"};//地址
+         //String[] filePath = {"http:localhost:8080\\travel-images\\large\\"};//地址
         Iterator iter = fileItems.iterator();
         while (iter.hasNext()) {
             FileItem fileItem = (FileItem) iter.next();
@@ -75,6 +76,7 @@ public class UpLoadServlet extends HttpServlet {
         }
 
         PictureDAO.save(picture);
+        PictureDAO.createSquareImg(getServletContext().getRealPath("/travel-images")+"\\large\\"+imgName,getServletContext().getRealPath("/travel-images")+"\\square-medium\\"+imgName);
         request.getRequestDispatcher("/myPhoto").forward(request, response);
     }
 

@@ -21,8 +21,7 @@
 </div>
 <%@include file="navbar.jsp" %>
 <!-- 轮播 -->
-<div class="container" style="height: 500px">
-    <div id="myCarousel" class="carousel slide" style="height: 500px">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" data-interval="2000" style="height: 500px">
         <!-- 轮播（Carousel）指标 -->
         <ol class="carousel-indicators">
             <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -35,16 +34,22 @@
                 List<Picture> pictureList = PictureDAO.getHotPic();
             %>
             <div class="item active">
-                <img src="travel-images/large/<%=pictureList.get(0).getPath()%>" alt="First slide" style="text-align: center">
+                <a href="/detail?id=<%=pictureList.get(0).getID()%>">
+                <img src="travel-images/large/<%=pictureList.get(0).getPath()%>" alt="First slide" style="width: 100%;">
                 <div class="carousel-caption"><%=pictureList.get(0).getTitle()%></div>
+                </a>
             </div>
             <div class="item">
-                <img src="travel-images/large/<%=pictureList.get(1).getPath()%>" alt="Second slide" style="text-align: center">
+                <a href="/detail?id=<%=pictureList.get(1).getID()%>">
+                <img src="travel-images/large/<%=pictureList.get(1).getPath()%>" alt="Second slide" style="width: 100%;">
                 <div class="carousel-caption"><%=pictureList.get(1).getTitle()%></div>
+                </a>
             </div>
             <div class="item">
-                <img src="travel-images/large/<%=pictureList.get(2).getPath()%>" alt="Third slide" style="text-align: center">
+                <a href="/detail?id=<%=pictureList.get(2).getID()%>">
+                <img src="travel-images/large/<%=pictureList.get(2).getPath()%>" alt="Third slide" style="width: 100%;">
                 <div class="carousel-caption"><%=pictureList.get(2).getTitle()%></div>
+                </a>
             </div>
 
         </div>
@@ -58,11 +63,10 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-</div>
 <hr>
 <div class="container">
 
-    <h3><span class="glyphicon glyphicon-fire"></span> Some hot photos:</h3>
+    <h3><span class="glyphicon glyphicon-fire"></span> Hottest photos:</h3>
     <hr>
     <div class="row">
         <%
@@ -70,8 +74,8 @@
 
         %>
         <div class="col-md-3">
-            <div class="card " style="width:200px;height: 500px">
-                <img class="card-img-top" src="travel-images/square-medium/<%=picture.getPath()%>" style="width:100%">
+            <div class="card " style="width:200px;height: 400px">
+                <img class="card-img-top"  src="travel-images/square-medium/<%=picture.getPath()%>" style="width:100%">
                 <div class="card-body">
                     <h4 class="card-title"><%=picture.getTitle()%></h4>
                     <p class="card-text">Author:<%=picture.getAuthor()%></p>
@@ -87,7 +91,7 @@
 
     </div>
 
-    <h3><span class="glyphicon glyphicon-open"></span> Some new photos:</h3>
+    <h3><span class="glyphicon glyphicon-open"></span> New photos:</h3>
     <hr>
     <div class="row">
         <%

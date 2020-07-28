@@ -1,7 +1,9 @@
 package Servlet.UserServlet;
 
 import DAO.PictureDAO;
+import DAO.UserDAO;
 import Entity.Picture;
+import Entity.User;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -20,6 +22,10 @@ public class FavorPicServlet extends HttpServlet {
         List<Picture> pictures = PictureDAO.findFavour(username);
         String result = PictureDAO.parseToJson(pictures);
         request.setAttribute("pictures",result);
+        User user = UserDAO.findUser(username);
+        request.setAttribute("limit",""+user.getState());
+        List<Picture> footprint = PictureDAO.findFootprint(username);
+        request.setAttribute("footprint",footprint);
         request.getRequestDispatcher("myfavourite.jsp").forward(request, response);
     }
 

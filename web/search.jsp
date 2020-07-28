@@ -19,11 +19,11 @@
 <div class="container">
     <div class="title"><h3><span class="glyphicon glyphicon-search"></span>搜索</h3></div>
     <hr>
-    <form onsubmit="return false;" class="form-horizontal" role="form">
+    <form action="/search" method="post" class="form-horizontal" role="form">
         <div class="row" style="padding: 5px;">
             <div class="col-md-6">
                 <div class="input-group">
-                    <input type="text" name="text" id="text" class="form-control" placeholder="Search for..." required>
+                    <input type="text" name="text" id="text" class="form-control" placeholder="${requestScope.text}" required>
                     <span class="input-group-btn">
                     <input class="btn btn-default" type="submit" id="submit" value="搜索">
                 </span>
@@ -33,7 +33,7 @@
         <div class="row">
             <div class="col-md-offset-1 col-md-6">
                 <div class="radio">
-                    <label><input type="radio" name="type" value="title" checked>搜索标题</label>
+                    <label><input type="radio" name="type" value="title" required>搜索标题</label>
                     <label><input type="radio" name="type" value="content">搜索主题</label>
                 </div>
             </div>
@@ -41,7 +41,7 @@
         <div class="row">
             <div class="col-md-offset-1 col-md-6">
                 <div class="radio">
-                    <label><input type="radio" name="order" value="likeperson" checked>按热度排序</label>
+                    <label><input type="radio" name="order" value="likeperson" required>按热度排序</label>
                     <label><input type="radio" name="order" value="imageID">按时间排序</label>
                 </div>
             </div>
@@ -67,6 +67,14 @@
     var totalCount;
     var totalPage;
     var result;
+    var data = '<%=request.getAttribute("result")%>';
+    result = JSON.parse(data).results;
+    if(result!==null) {
+        totalCount = result.length;
+        totalPage = Math.ceil(totalCount / pageSize);
+    }
+    showPage(1);
+
 
     function showPage(page) {
         var str = "";
@@ -120,31 +128,6 @@
         }
         $('#resultPart').empty().html(str);
     }
-
-    $(document).ready(function () {
-        $('#submit').click(function () {
-            var text = $('#text').val();
-            var type = $("input[name='type']:checked").val();
-            var order = $("input[name='order']:checked").val();
-            $.ajax({
-                type: "post",
-                async: false,
-                url: '/search',
-                data: {"text": text, "type": type, "order": order},
-                data_type: 'json',
-                timeout: 30000,
-                success: function (data) {
-                    result = JSON.parse(data).results;
-                    if (result != null) {
-                        totalCount = result.length;
-                        totalPage = Math.ceil(totalCount / pageSize);
-                    }
-                    showPage(1);
-                }
-            });
-        });
-
-    });
 
 </script>
 

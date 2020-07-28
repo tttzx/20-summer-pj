@@ -27,17 +27,8 @@ public class SearchServlet extends HttpServlet {
             pictures = PictureDAO.searchByContent(text, order);
         }
         String result = PictureDAO.parseToJson(pictures);
-        PrintWriter out = null;
-        try {
-            out = response.getWriter();
-            out.print(result);
-        } catch (Exception e) {
-            e.printStackTrace();
-        } finally {
-            out.flush();
-            out.close();
-        }
-
+        request.setAttribute("result",result);
+        request.getRequestDispatcher("search.jsp").forward(request, response);
     }
 
 

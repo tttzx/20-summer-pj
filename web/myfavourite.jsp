@@ -22,18 +22,53 @@
         <div class="col-md-9">
             <div class="title">
                 <h3><span class="glyphicon glyphicon-user"></span><strong><%= session.getAttribute("username") %>
-                </strong>的收藏</h3></div>
+                </strong>的收藏</h3>
+            </div>
             <hr>
-            <div id="favourResult"></div>
+            <div class="row">
+                <h5 class="col-md-2">允许好友查看：</h5>
+                <select class="col-md-10 form-control" id="limit" style="width: 10%" name="limit"
+                        onchange="changeState()">
+                    <%
+                        String limit = (String) request.getAttribute("limit");
+                        if (limit != null) {
+                            if (limit.equals("1")) {
+                    %>
+                    <option value="1" selected>是</option>
+                    <option value="0">否</option>
+                    <%
+                    } else {
+                    %>
+                    <option value="1"> 是</option>
+                    <option value="0" selected> 否</option>
+                    <%
+                            }
+                        }
+                    %>
+                </select>
+            </div>
+            <hr>
+            <div id="favourResult">
+
+            </div>
         </div>
+
         <div class="col-md-3">
+
             <div class="panel panel-default">
                 <!-- Default panel contents -->
                 <div class="panel-heading"><strong>我的足迹</strong></div>
-                <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                <a href="#" class="list-group-item">Morbi leo risus</a>
-                <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                <a href="#" class="list-group-item">Vestibulum at eros</a>
+                <% List<Picture> pictures = (List<Picture>) request.getAttribute("footprint");
+                    if (pictures != null) {
+                        for (Picture picture : pictures) {
+                %>
+                <a href="/detail?id=<%=picture.getID()%>" class="list-group-item">
+                    <%=picture.getTitle()%>
+                </a>
+                <%
+                        }
+                    }
+                %>
             </div>
         </div>
 
@@ -44,10 +79,12 @@
     var totalCount;
     var totalPage;
     var result;
-    var data ='<%=request.getAttribute("pictures")%>';
+    var data = '<%=request.getAttribute("pictures")%>';
     result = JSON.parse(data).results;
-    totalCount = result.length;
-    totalPage = Math.ceil(totalCount / pageSize);
+    if(result!==null) {
+        totalCount = result.length;
+        totalPage = Math.ceil(totalCount / pageSize);
+    }
 
     showFavourPage(1);
 
@@ -98,6 +135,20 @@
                 "</div>";
         }
         $('#favourResult').empty().html(str);
+    }
+
+    function changeState() {
+        var limit = $("#limit").val();
+        $.ajax({
+            type: "post",
+            async: false,
+            url: "/changeState",
+            data: {"limit": limit},
+            data_type: 'json',
+            success: function (data) {
+                alert("修改成功！");
+            }
+        })
     }
 </script>
 </body>

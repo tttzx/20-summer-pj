@@ -19,7 +19,7 @@ public class AddMyFavorServlet extends HttpServlet {
         String imageID = request.getParameter("imageID");
         PictureDAO.addToMyFavour(UserDAO.getID(name),imageID);
         response.sendRedirect(request.getHeader("Referer"));
-    }
+}
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 

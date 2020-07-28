@@ -11,11 +11,13 @@ public class User {
     private Timestamp dateJoined;
     private Timestamp dateLastModified;
 
-    public User(String ID, String email, String userName, String pass) {
+    public User(String ID, String email, String userName, String pass, Integer state, Timestamp dateJoined) {
         this.ID = ID;
         this.email = email;
         this.userName = userName;
         this.pass = pass;
+        this.state = state;
+        this.dateJoined = dateJoined;
     }
 
     @Override

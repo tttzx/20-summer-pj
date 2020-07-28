@@ -18,7 +18,7 @@ public class RegServlet extends HttpServlet {
         String email = request.getParameter("email");
         String pass = request.getParameter("password");
         if(UserDAO.findUser(name)==null && UserDAO.findUser(email)==null){
-            User user = new User(null,email,name,pass);
+            User user = new User(null,email,name,pass,1,null);
             UserDAO.saveUser(user);
             request.setAttribute("info","Register success!");
             HttpSession session = request.getSession();
