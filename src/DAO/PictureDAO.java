@@ -332,7 +332,7 @@ public class PictureDAO {
             pst = conn.prepareStatement(sql);
             pst.setString(1, UID);
             rs = pst.executeQuery();
-            while (rs.next() && ids.size() <= 10) {
+            while (rs.next() && ids.size() < 10) {
                 String id = rs.getString("ImageID");
                 if (!ids.contains(id)) {
                     ids.add(id);

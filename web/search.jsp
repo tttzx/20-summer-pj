@@ -43,7 +43,7 @@
             <div class="col-md-offset-1 col-md-6">
                 <div class="radio">
                     <label><input type="radio" name="order" value="likeperson" required>按热度排序</label>
-                    <label><input type="radio" name="order" value="imageID">按时间排序</label>
+                    <label><input type="radio" name="order" value="updateTime">按时间排序</label>
                 </div>
             </div>
         </div>

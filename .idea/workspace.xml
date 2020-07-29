@@ -7,32 +7,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bfa0b63d-316f-4dfd-89af-997f6ed7e22d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/eb56a9c2-aae0-4977-a265-b1dda963c104.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/eb56a9c2-aae0-4977-a265-b1dda963c104.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/homework_war_exploded/WEB-INF/classes/Servlet/UserServlet/LoginCheckServlet.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/homework_war_exploded/WEB-INF/classes/Servlet/UserServlet/LoginCheckServlet.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/homework_war_exploded/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/homework_war_exploded/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/homework/DAO/PictureDAO.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/homework/DAO/PictureDAO.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/homework/Servlet/UserServlet/LoginCheckServlet.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/DAO/PictureDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/DAO/PictureDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Entity/Picture.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Entity/Picture.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/PicServlet/UpLoadServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/PicServlet/UpLoadServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/PicServlet/UpdateServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/PicServlet/UpdateServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/UserServlet/DeleteMyFavorServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/UserServlet/DeleteMyFavorServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/UserServlet/FavorPicServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/UserServlet/FavorPicServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/UserServlet/LoginCheckServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/UserServlet/LoginCheckServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/UserServlet/LogoutServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/UserServlet/LogoutServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Servlet/UserServlet/MyPhotoServlet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Servlet/UserServlet/MyPhotoServlet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/details.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/details.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/friendFavourite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/friendFavourite.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/login.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/login.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/myfavourite.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/myfavourite.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/myfriend.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/myfriend.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/myphoto.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/myphoto.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/navbar.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/navbar.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/register.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/register.jsp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/web/search.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/search.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/update.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/update.jsp" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/web/upload.jsp" beforeDir="false" afterPath="$PROJECT_DIR$/web/upload.jsp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -131,9 +108,13 @@
     <session id="746510676">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
+          <entry key="project.closed" value="2" />
           <entry key="project.open.time.16" value="1" />
           <entry key="project.open.time.22" value="1" />
-          <entry key="project.opened" value="2" />
+          <entry key="project.open.time.23" value="1" />
+          <entry key="project.open.time.34" value="1" />
+          <entry key="project.open.time.38" value="1" />
+          <entry key="project.opened" value="5" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -162,8 +143,9 @@
           <entry key="css" value="1" />
           <entry key="footprint" value="7" />
           <entry key="friend" value="3" />
-          <entry key="java" value="168" />
-          <entry key="jsp" value="95" />
+          <entry key="java" value="173" />
+          <entry key="jsp" value="99" />
+          <entry key="md" value="2" />
           <entry key="travelimage" value="13" />
           <entry key="travelimagefavor" value="6" />
           <entry key="traveluser" value="6" />
@@ -176,8 +158,9 @@
           <entry key="CLASS" value="2" />
           <entry key="CSS" value="1" />
           <entry key="Database Element" value="35" />
-          <entry key="JAVA" value="168" />
-          <entry key="JSP" value="95" />
+          <entry key="JAVA" value="173" />
+          <entry key="JSP" value="99" />
+          <entry key="Markdown" value="2" />
           <entry key="TypeScript" value="1" />
           <entry key="XML" value="2" />
         </counts>
@@ -186,14 +169,66 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/web/register.jsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="157">
-              <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+            <state relative-caret-position="399">
+              <caret line="286" column="36" selection-start-line="286" selection-start-column="36" selection-end-line="286" selection-end-column="36" />
               <folding>
                 <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/DAO/PictureDAO.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="252">
+              <caret line="334" column="44" selection-start-line="334" selection-start-column="44" selection-end-line="334" selection-end-column="44" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/search.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="269">
+              <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet/FavorPicServlet.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="285">
+              <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/web/upload.jsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="364">
+              <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/Util/JdbcUtil.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="57">
+              <caret line="7" selection-start-line="7" selection-end-line="7" />
             </state>
           </provider>
         </entry>
@@ -283,10 +318,10 @@
         <option value="$PROJECT_DIR$/web/update.jsp" />
         <option value="$PROJECT_DIR$/web/myfriend.jsp" />
         <option value="$PROJECT_DIR$/web/navbar.jsp" />
-        <option value="$PROJECT_DIR$/web/search.jsp" />
         <option value="$PROJECT_DIR$/web/myfavourite.jsp" />
         <option value="$PROJECT_DIR$/web/myphoto.jsp" />
         <option value="$PROJECT_DIR$/web/friendFavourite.jsp" />
+        <option value="$PROJECT_DIR$/web/search.jsp" />
         <option value="$PROJECT_DIR$/src/DAO/PictureDAO.java" />
       </list>
     </option>
@@ -315,7 +350,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -326,12 +362,45 @@
             <path>
               <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
               <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
-              <item name="out" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
               <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="DAO" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Entity" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Servlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="PicServlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Servlet" type="462c0819:PsiDirectoryNode" />
+              <item name="UserServlet" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
+              <item name="20-summer-pj" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="Util" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="20-summer-pj" type="b2602c69:ProjectViewProjectNode" />
@@ -342,15 +411,14 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1595952043123" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1596027768850" />
     <property name="database.console.LAST_STATE" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/out/artifacts" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
@@ -496,12 +564,15 @@
       <workItem from="1594294158027" duration="8223000" />
       <workItem from="1594355254324" duration="115562000" />
       <workItem from="1594876550145" duration="83937000" />
-      <workItem from="1595735027275" duration="36295000" />
+      <workItem from="1595735027275" duration="37969000" />
+      <workItem from="1595995185952" duration="3676000" />
+      <workItem from="1596013556114" duration="857000" />
+      <workItem from="1596023658603" duration="3608000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="266812000" />
+    <option name="totallyTimeSpent" value="276627000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -516,7 +587,7 @@
     <frame x="-6" y="-6" width="1381" height="885" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8187633" visible="true" weight="0.17157975" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.8187633" visible="true" weight="0.17838247" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Designer" order="2" />
       <window_info id="Image Layers" order="3" />
@@ -526,13 +597,13 @@
       <window_info id="Capture Tool" order="7" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32891247" />
-      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4988662" weight="0.37798408" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.4988662" visible="true" weight="0.37798408" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32980132" />
       <window_info anchor="bottom" id="Application Servers" order="7" weight="0.32980132" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32891247" />
+      <window_info anchor="bottom" id="Terminal" order="8" weight="0.32847682" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5011338" side_tool="true" weight="0.37798408" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32891247" />
       <window_info anchor="bottom" id="Java Enterprise" order="11" weight="0.32891247" />
@@ -545,7 +616,7 @@
       <window_info anchor="right" id="Palette" order="3" />
       <window_info anchor="right" id="Capture Analysis" order="4" />
       <window_info anchor="right" id="Maven Projects" order="5" />
-      <window_info anchor="right" id="Database" order="6" weight="0.1814059" />
+      <window_info anchor="right" id="Database" order="6" visible="true" weight="0.1005291" />
       <window_info anchor="right" id="Palette&#9;" order="7" />
       <window_info anchor="right" id="Theme Preview" order="8" />
     </layout>
@@ -591,27 +662,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external/lib.dom.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="6157" column="13" selection-start-line="6157" selection-start-column="13" selection-end-line="6157" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/css/Details.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="38">
-          <caret line="2" column="16" lean-forward="true" selection-start-line="2" selection-start-column="16" selection-end-line="2" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="das://eb56a9c2-aae0-4977-a265-b1dda963c104/schema/travels/table/travelimagefavor">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Servlet/FriendServlet/FriendFavorServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117">
@@ -657,9 +707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="245">
           <caret line="22" column="60" lean-forward="true" selection-start-line="22" selection-start-column="7" selection-end-line="22" selection-end-column="60" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -771,19 +818,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="193">
           <caret line="94" column="12" selection-start-line="94" selection-start-column="12" selection-end-line="94" selection-end-column="12" />
-          <folding>
-            <element signature="e#2780#2781#0" expanded="true" />
-            <element signature="e#2809#2810#0" expanded="true" />
-            <element signature="e#2856#2857#0" expanded="true" />
-            <element signature="e#2892#2893#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Servlet/PicServlet/SearchServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="190">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
         </state>
       </provider>
     </entry>
@@ -812,9 +846,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="121">
           <caret line="18" selection-start-line="18" selection-end-line="25" selection-end-column="2" />
-          <folding>
-            <element signature="n#div#0;n#body#0;n#html#0;n#!!top" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -829,9 +860,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="293">
           <caret line="23" column="9" selection-start-line="23" selection-start-column="9" selection-end-line="23" selection-end-column="9" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -839,9 +867,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="133">
           <caret line="16" column="51" lean-forward="true" selection-start-line="16" selection-start-column="51" selection-end-line="16" selection-end-column="51" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -863,16 +888,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="383">
           <caret line="27" column="19" lean-forward="true" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet/FavorPicServlet.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="27" column="53" selection-start-line="27" selection-start-column="53" selection-end-line="27" selection-end-column="53" />
         </state>
       </provider>
     </entry>
@@ -880,9 +895,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="38">
           <caret line="14" column="45" lean-forward="true" selection-start-line="14" selection-start-column="45" selection-end-line="14" selection-end-column="45" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -900,20 +912,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/upload.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1333">
-          <caret line="116" column="58" selection-start-line="116" selection-start-column="58" selection-end-line="116" selection-end-column="58" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Servlet/PicServlet/UpLoadServlet.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
           <caret line="77" lean-forward="true" selection-start-line="77" selection-end-line="77" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -924,25 +926,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/web/search.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="115" column="18" selection-start-line="115" selection-start-column="18" selection-end-line="115" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/web/friendFavourite.jsp">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="665">
           <caret line="71" column="58" selection-start-line="71" selection-start-column="58" selection-end-line="71" selection-end-column="58" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -950,10 +937,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="131" column="18" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -961,34 +944,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
           <caret line="87" column="19" selection-start-line="87" selection-start-column="19" selection-end-line="87" selection-end-column="19" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/DAO/PictureDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="309">
-          <caret line="118" column="17" lean-forward="true" selection-start-line="118" selection-start-column="17" selection-end-line="118" selection-end-column="17" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/details.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="67" column="17" lean-forward="true" selection-start-line="67" selection-start-column="17" selection-end-line="67" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/index.jsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="570">
-          <caret line="85" column="18" lean-forward="true" selection-start-line="85" selection-start-column="18" selection-end-line="85" selection-end-column="18" />
         </state>
       </provider>
     </entry>
@@ -999,12 +954,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../../homework7.8/卓越软件开发7.8作业.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../../homework7.10/卓越软件开发7.10作业.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="589">
+            <caret line="31" selection-start-line="28" selection-end-line="33" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Util/JdbcUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="57">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/index.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-817">
+          <caret line="23" column="89" selection-start-line="23" selection-start-column="69" selection-end-line="23" selection-end-column="89" />
+          <folding>
+            <element signature="n#style#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/details.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="328">
+          <caret line="48" column="41" selection-start-line="48" selection-start-column="41" selection-end-line="48" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/web/register.jsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="157">
-          <caret line="24" column="8" lean-forward="true" selection-start-line="24" selection-start-column="8" selection-end-line="24" selection-end-column="8" />
+        <state relative-caret-position="399">
+          <caret line="286" column="36" selection-start-line="286" selection-start-column="36" selection-end-line="286" selection-end-column="36" />
           <folding>
             <element signature="n#style#0;n#p#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/upload.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="111" column="9" selection-start-line="111" selection-start-column="9" selection-end-line="111" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet/PicServlet/SearchServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="190">
+          <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web/search.jsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="269">
+          <caret line="43" column="35" lean-forward="true" selection-start-line="43" selection-start-column="35" selection-end-line="43" selection-end-column="35" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Servlet/UserServlet/FavorPicServlet.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="27" column="54" selection-start-line="27" selection-start-column="54" selection-end-line="27" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/DAO/PictureDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="334" column="44" selection-start-line="334" selection-start-column="44" selection-end-line="334" selection-end-column="44" />
+          <folding>
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
