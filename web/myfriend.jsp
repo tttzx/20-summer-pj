@@ -16,9 +16,19 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<%
+    if (session.getAttribute("username") == null) {
+
+%>
+<p>请先登录</p>
+<%
+} else{
+%>
+
 <div class="container">
     <div class="title"><h3><span class="glyphicon glyphicon-user"></span> 好友</h3></div>
     <hr>
+
     <div class="row">
         <div class="col-md-5">
             <div class="row">
@@ -113,7 +123,6 @@
             </div>
             <div id="result">
                 <div class="row">
-
                     <%
                         List<User> results = (List<User>) request.getAttribute("results");
                         if (results != null)
@@ -143,7 +152,9 @@
         </div>
     </div>
 </div>
-
+<%
+    }
+%>
 
 </body>
 </html>

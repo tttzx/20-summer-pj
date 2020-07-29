@@ -38,8 +38,10 @@
     var result;
     var data = '<%=request.getAttribute("pictures")%>';
     result = JSON.parse(data).results;
-    totalCount = result.length;
-    totalPage = Math.ceil(totalCount / pageSize);
+    if (result !== null) {
+        totalCount = result.length;
+        totalPage = Math.ceil(totalCount / pageSize);
+    }
 
     showFavourPage(1);
 
@@ -47,6 +49,7 @@
     function showFavourPage(page) {
         var str = "";
         if (result === null) {
+            str="<p>TA暂时没有收藏图片哦<p>";
         } else if (result == "NO") {
             str="<p>对不起，该好友隐藏了自己的收藏！<p>";
         } else {
@@ -66,12 +69,7 @@
 
             str += "<div class='row'>" +
                 "<nav  class='col-md-5 col-md-offset-4' aria-label=\"Page navigation\" >\n" +
-                "            <ul class=\"pagination \">\n" +
-                "                <li>\n" +
-                "                    <a href=\"#\" aria-label=\"Previous\">\n" +
-                "                        <span aria-hidden=\"true\">&laquo;</span>\n" +
-                "                    </a>\n" +
-                "                </li>";
+                "            <ul class=\"pagination \">\n";
 
             for (var i = 1; i <= totalPage; i++) {
                 if (page === i) {
@@ -81,12 +79,7 @@
                 }
             }
 
-            str += " <li>\n" +
-                "            <a href=\"#\" aria-label=\"Next\">\n" +
-                "                <span aria-hidden=\"true\">&raquo;</span>\n" +
-                "            </a>\n" +
-                "        </li>\n" +
-                "        </ul>\n" +
+            str +="        </ul>\n" +
                 "        </nav>" +
                 "</div>";
         }

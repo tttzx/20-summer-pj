@@ -18,7 +18,7 @@ public class DeleteMyFavorServlet extends HttpServlet {
         String name= (String)session.getAttribute("username");
         String imageID = request.getParameter("imageID");
         PictureDAO.deleteMyFavour(UserDAO.getID(name),imageID);
-        request.getRequestDispatcher("/myfavour").forward(request,response);
+        response.sendRedirect(request.getHeader("Referer"));
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

@@ -17,6 +17,14 @@
 <body>
 <%@include file="navbar.jsp" %>
 
+<%
+    if (session.getAttribute("username") == null) {
+
+%>
+<p>请先登录</p>
+<%
+} else{
+%>
 <div class="container">
     <div class="row">
         <div class="col-md-9">
@@ -81,7 +89,7 @@
     var result;
     var data = '<%=request.getAttribute("pictures")%>';
     result = JSON.parse(data).results;
-    if(result!==null) {
+    if (result !== null) {
         totalCount = result.length;
         totalPage = Math.ceil(totalCount / pageSize);
     }
@@ -92,6 +100,7 @@
     function showFavourPage(page) {
         var str = "";
         if (result === null) {
+            str="<p>你还没有收藏过图片哦……<p>";
         } else {
             for (var i = (page - 1) * pageSize; i < page * pageSize && i < result.length; i++) {
                 str += "<div class=\"col-md-4\">\n" +
@@ -110,12 +119,7 @@
 
             str += "<div class='row'>" +
                 "<nav  class='col-md-5 col-md-offset-4' aria-label=\"Page navigation\" >\n" +
-                "            <ul class=\"pagination \">\n" +
-                "                <li>\n" +
-                "                    <a href=\"#\" aria-label=\"Previous\">\n" +
-                "                        <span aria-hidden=\"true\">&laquo;</span>\n" +
-                "                    </a>\n" +
-                "                </li>";
+                "            <ul class=\"pagination \">\n";
 
             for (var i = 1; i <= totalPage; i++) {
                 if (page === i) {
@@ -125,12 +129,7 @@
                 }
             }
 
-            str += " <li>\n" +
-                "            <a href=\"#\" aria-label=\"Next\">\n" +
-                "                <span aria-hidden=\"true\">&raquo;</span>\n" +
-                "            </a>\n" +
-                "        </li>\n" +
-                "        </ul>\n" +
+            str +="        </ul>\n" +
                 "        </nav>" +
                 "</div>";
         }
@@ -151,5 +150,8 @@
         })
     }
 </script>
+<%
+    }
+%>
 </body>
 </html>

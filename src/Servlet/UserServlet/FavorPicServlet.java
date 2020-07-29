@@ -19,13 +19,15 @@ public class FavorPicServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String username= (String)session.getAttribute("username");
-        List<Picture> pictures = PictureDAO.findFavour(username);
-        String result = PictureDAO.parseToJson(pictures);
-        request.setAttribute("pictures",result);
-        User user = UserDAO.findUser(username);
-        request.setAttribute("limit",""+user.getState());
-        List<Picture> footprint = PictureDAO.findFootprint(username);
-        request.setAttribute("footprint",footprint);
+        if(username!=null) {
+            List<Picture> pictures = PictureDAO.findFavour(username);
+            String result = PictureDAO.parseToJson(pictures);
+            request.setAttribute("pictures", result);
+            User user = UserDAO.findUser(username);
+            request.setAttribute("limit", "" + user.getState());
+            List<Picture> footprint = PictureDAO.findFootprint(username);
+            request.setAttribute("footprint", footprint);
+        }
         request.getRequestDispatcher("myfavourite.jsp").forward(request, response);
     }
 

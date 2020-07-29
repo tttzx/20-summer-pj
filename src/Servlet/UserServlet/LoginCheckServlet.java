@@ -23,10 +23,9 @@ public class LoginCheckServlet extends HttpServlet {
             out = response.getWriter();
             if(user!=null){
                 if (user.getPass().equals(pass)) {
-                    out.print("OK");
                     HttpSession session = request.getSession();
                     session.setAttribute("username", user.getUserName());
-                    response.sendRedirect(request.getHeader("Referer"));
+                    out.print("OK");
                 } else {
                     out.print("NO");
                 }

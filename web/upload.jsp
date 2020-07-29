@@ -16,6 +16,14 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<%
+    if (session.getAttribute("username") == null) {
+
+%>
+<p>请先登录</p>
+<%
+} else{
+%>
 <div class="container">
     <div class="title">
         <h3><span class="glyphicon glyphicon-import"></span><strong>上传图片</strong></h3>
@@ -67,6 +75,9 @@
     </div>
 
 </div>
+<%
+    }
+%>
 <script type="text/javascript">
     function viewmypic(mypic, upfile) {
         if (upfile.files && upfile.files[0]) {
@@ -108,14 +119,19 @@
             return str;
         }
 
-        function checkDefault() {
-            var country = $("#country").val();
-            var region = $("#region").val();
-            if (country === "default" || region === "default") {
-                alert("请正确填写国家和地区");
-                return false;
-            } else {
+    }
+
+    function checkDefault() {
+        var country = $("#country").val();
+        var region = $("#region").val();
+        if (country === "default" || region === "default") {
+            alert("请正确填写国家和地区");
+            return false;
+        } else {
+            if(confirm("是否确认信息无误？")){
                 return true;
+            }else {
+                return false;
             }
         }
     }

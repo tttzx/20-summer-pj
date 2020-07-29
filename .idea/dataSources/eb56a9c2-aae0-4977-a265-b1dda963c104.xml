@@ -1442,79 +1442,86 @@
       <DefaultExpression>&apos;0&apos;</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="351" parent="284" name="CityCode">
+    <column id="351" parent="284" name="updateTime">
+      <Position>12</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="352" parent="284" name="CityCode">
       <ColNames>CityCode</ColNames>
       <Type>btree</Type>
     </index>
-    <index id="352" parent="284" name="CountryCodeISO">
+    <index id="353" parent="284" name="CountryCodeISO">
       <ColNames>Country_RegionCodeISO</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="353" parent="284" name="PRIMARY">
+    <key id="354" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>ImageID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="354" parent="285" name="FavorID">
+    <column id="355" parent="285" name="FavorID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="355" parent="285" name="UID">
+    <column id="356" parent="285" name="UID">
       <Position>2</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="356" parent="285" name="ImageID">
+    <column id="357" parent="285" name="ImageID">
       <Position>3</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="357" parent="285" name="PRIMARY">
+    <key id="358" parent="285" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>FavorID</ColNames>
       <Primary>1</Primary>
     </key>
-    <column id="358" parent="286" name="UID">
+    <column id="359" parent="286" name="UID">
       <Position>1</Position>
       <DataType>int|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="359" parent="286" name="Email">
+    <column id="360" parent="286" name="Email">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="360" parent="286" name="UserName">
+    <column id="361" parent="286" name="UserName">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="361" parent="286" name="Pass">
+    <column id="362" parent="286" name="Pass">
       <Position>4</Position>
       <DataType>varchar(255)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="362" parent="286" name="State">
+    <column id="363" parent="286" name="State">
       <Position>5</Position>
       <DataType>int|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="363" parent="286" name="DateJoined">
+    <column id="364" parent="286" name="DateJoined">
       <Position>6</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="286" name="DateLastModified">
+    <column id="365" parent="286" name="DateLastModified">
       <Position>7</Position>
       <DataType>datetime|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="365" parent="286" name="PRIMARY">
+    <key id="366" parent="286" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>UID</ColNames>
       <Primary>1</Primary>

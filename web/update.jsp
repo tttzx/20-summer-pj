@@ -17,6 +17,14 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+<%
+    if (session.getAttribute("username") == null) {
+
+%>
+<p>请先登录</p>
+<%
+} else{
+%>
 <div class="container">
     <div class="title">
         <h3><span class="glyphicon glyphicon-import"></span><strong>修改图片</strong></h3>
@@ -26,7 +34,7 @@
         Picture picture = (Picture) request.getAttribute("picture");
     %>
     <div class="row">
-        <form action="/update" enctype="multipart/form-data" method="post">
+        <form action="/update" onsubmit="return confirm('确定要修改吗？')" enctype="multipart/form-data" method="post">
             <input type="hidden" name="id" value="<%=picture.getID()%>">
             <div class="col-lg-4">
                 <p>选择您要上传的图片：</p>
@@ -74,6 +82,7 @@
     </div>
 
 </div>
+
 <script type="text/javascript">
     $('#description').val("<%=picture.getDescription()%>");
 
@@ -104,7 +113,6 @@
                 alert("请求出错");
             }
         });
-        console.log(cities);
         if (cities) {
             city.empty().html(fillContents(cities));
         }
@@ -119,5 +127,8 @@
     }
 
 </script>
+<%
+    }
+%>
 </body>
 </html>

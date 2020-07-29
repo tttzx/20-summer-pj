@@ -41,7 +41,8 @@ public class PictureDAO {
                         user.getUserName(),
                         rs.getString("path"),
                         rs.getString("content"),
-                        rs.getInt("likeperson"));
+                        rs.getInt("likeperson"),
+                        rs.getTimestamp("updateTime"));
             }
             return picture;
         } catch (SQLException e) {
@@ -61,7 +62,7 @@ public class PictureDAO {
     }
 
     public static List<Picture> getNewPic() {
-        String sql = "SELECT * from travelimage ORDER BY ImageID DESC LIMIT 4";
+        String sql = "SELECT * from travelimage ORDER BY updateTime DESC LIMIT 4";
         return getPicList(sql);
     }
 
@@ -84,12 +85,13 @@ public class PictureDAO {
         if(!title.contains(" ")) {
             sql = "SELECT * FROM travelimage WHERE Title LIKE '%" + title + "%' ORDER BY " + order + " DESC";
         }else {
-            sql = "SELECT * FROM travelimage WHERE Title LIKE '%";
+            sql = "SELECT * FROM travelimage WHERE ";
             String[] newStr = title.split(" ");
             for (String string : newStr) {
-                sql += string + "%";
+                sql +=" Title LIKE '%"+ string + "%' AND";
             }
-            sql += "' ORDER BY " + order + " DESC";
+            sql=sql.substring(0,sql.length()-3);
+            sql += "ORDER BY " + order + " DESC";
         }
         return getPicList(sql);
     }
@@ -211,8 +213,8 @@ public class PictureDAO {
 
     public static void save(Picture picture) {
         Connection conn = jdbcUtil.getConnection();
-        String sql = "INSERT INTO travelimage(Title,Description,CityCode,Country_RegionCodeISO,UID,PATH,Content,likeperson) " +
-                "VALUES (?,?,?,?,?,?,?,?)";
+        String sql = "INSERT INTO travelimage(Title,Description,CityCode,Country_RegionCodeISO,UID,PATH,Content,likeperson,updateTime) " +
+                "VALUES (?,?,?,?,?,?,?,?,?)";
         PreparedStatement pst = null;
         try {
             pst = conn.prepareStatement(sql);
@@ -224,6 +226,7 @@ public class PictureDAO {
             pst.setString(6, picture.getPath());
             pst.setString(7, picture.getContent());
             pst.setInt(8, 0);
+            pst.setDate(9, new Date(new java.util.Date().getTime()));
             pst.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -236,7 +239,7 @@ public class PictureDAO {
     public static void update(Picture picture) {
         Connection conn = jdbcUtil.getConnection();
         String sql = "update travelimage SET Title = ?,Description=?,CityCode=?,Country_RegionCodeISO=?," +
-                "UID=?,PATH=?,Content=? WHERE ImageID= ?";
+                "UID=?,PATH=?,Content=?,updateTime=? WHERE ImageID= ?";
         PreparedStatement pst = null;
         try {
             pst = conn.prepareStatement(sql);
@@ -247,7 +250,8 @@ public class PictureDAO {
             pst.setString(5, UserDAO.getID(picture.getAuthor()));
             pst.setString(6, picture.getPath());
             pst.setString(7, picture.getContent());
-            pst.setString(8, picture.getID());
+            pst.setDate(8, new Date(new java.util.Date().getTime()));
+            pst.setString(9, picture.getID());
             pst.execute();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -328,7 +332,7 @@ public class PictureDAO {
             pst = conn.prepareStatement(sql);
             pst.setString(1, UID);
             rs = pst.executeQuery();
-            while (rs.next() || ids.size() == 10) {
+            while (rs.next() && ids.size() <= 10) {
                 String id = rs.getString("ImageID");
                 if (!ids.contains(id)) {
                     ids.add(id);

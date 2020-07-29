@@ -52,6 +52,9 @@
         </p>
         <p>内容：<%=picture.getContent()%>
         </p>
+        <p>上传时间：<%=picture.getUpdate()%>
+        </p>
+
         <hr>
         <h4 style="color: darkgray">>>More information</h4>
         <p style="color: darkgray"><%=picture.getDescription()%>
@@ -61,7 +64,11 @@
             if (session.getAttribute("username") != null) {
                 if (PictureDAO.alreadyFavoured((String) session.getAttribute("username"), request.getParameter("id"))) {
         %>
-        <button class="btn" style="cursor: not-allowed">您已收藏</button>
+        <form action="/deleteFavor" method="post">
+            <input type="text" value="<%=picture.getID()%>" name="imageID" style="display: none">
+            <button type="submit" class="btn btn-default">取消收藏</button>
+        </form>
+
         <%
         } else {
         %>

@@ -23,7 +23,8 @@
         <div class="row" style="padding: 5px;">
             <div class="col-md-6">
                 <div class="input-group">
-                    <input type="text" name="text" id="text" class="form-control" placeholder="${requestScope.text}" required>
+                    <input type="text" name="text" id="text" class="form-control" placeholder="${requestScope.text}"
+                           required>
                     <span class="input-group-btn">
                     <input class="btn btn-default" type="submit" id="submit" value="搜索">
                 </span>
@@ -69,7 +70,7 @@
     var result;
     var data = '<%=request.getAttribute("result")%>';
     result = JSON.parse(data).results;
-    if(result!==null) {
+    if (result !== null) {
         totalCount = result.length;
         totalPage = Math.ceil(totalCount / pageSize);
     }
@@ -102,12 +103,7 @@
 
             str += "<div class='row'>" +
                 "<nav  class='col-md-5 col-md-offset-4' aria-label=\"Page navigation\" >\n" +
-                "            <ul class=\"pagination \">\n" +
-                "                <li>\n" +
-                "                    <a href=\"#\" aria-label=\"Previous\">\n" +
-                "                        <span aria-hidden=\"true\">&laquo;</span>\n" +
-                "                    </a>\n" +
-                "                </li>";
+                "            <ul class=\"pagination \">\n";
 
             for (var i = 1; i <= totalPage; i++) {
                 if (page === i) {
@@ -117,12 +113,7 @@
                 }
             }
 
-            str += " <li>\n" +
-                "            <a href=\"#\" aria-label=\"Next\">\n" +
-                "                <span aria-hidden=\"true\">&raquo;</span>\n" +
-                "            </a>\n" +
-                "        </li>\n" +
-                "        </ul>\n" +
+            str +="        </ul>\n" +
                 "        </nav>" +
                 "</div>";
         }

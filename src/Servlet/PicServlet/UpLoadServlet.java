@@ -21,62 +21,64 @@ public class UpLoadServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String username = (String) session.getAttribute("username");
-        Picture picture = new Picture();
-        picture.setAuthor(username);
-        request.setCharacterEncoding("utf-8");
-        DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();//使用factory的缓冲区和临时文件
-        ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
-        List<FileItem> fileItems = null;
-        try {
-            //获得表单中提交的数据（为List集合）
-            fileItems = servletFileUpload.parseRequest(request);
-        } catch (FileUploadException e) {
-            e.printStackTrace();
-        }
+        if(username!=null) {
+            Picture picture = new Picture();
+            picture.setAuthor(username);
+            request.setCharacterEncoding("utf-8");
+            DiskFileItemFactory diskFileItemFactory = new DiskFileItemFactory();//使用factory的缓冲区和临时文件
+            ServletFileUpload servletFileUpload = new ServletFileUpload(diskFileItemFactory);
+            List<FileItem> fileItems = null;
+            try {
+                //获得表单中提交的数据（为List集合）
+                fileItems = servletFileUpload.parseRequest(request);
+            } catch (FileUploadException e) {
+                e.printStackTrace();
+            }
 
-        String imgName="";
-        String[] filePath = {getServletContext().getRealPath("/travel-images")+"\\large\\"};//地址
-         //String[] filePath = {"http:localhost:8080\\travel-images\\large\\"};//地址
-        Iterator iter = fileItems.iterator();
-        while (iter.hasNext()) {
-            FileItem fileItem = (FileItem) iter.next();
-            //如果是表单域，不是文件类型
-            if (fileItem.isFormField()) {
-                //获取value值，声明代码编码
-                String value = fileItem.getString("utf-8");
-                switch (fileItem.getFieldName()) {
-                    case "title":
-                        picture.setTitle(value);
-                        break;
-                    case "content":
-                        picture.setContent(value);
-                        break;
-                    case "country":
-                        picture.setCountryName(value);
-                        break;
-                    case "region":
-                        picture.setCityName(value);
-                        break;
-                    case "description":
-                        picture.setDescription(value);
-                        break;
-                }
-            } else {
-                imgName = fileItem.getName();
-                if (imgName != null && !imgName.equals("")) {
-                    picture.setPath(imgName);
-                    try {
-                        for (String path : filePath)
-                            fileItem.write(new File(path + imgName));
-                    } catch (Exception e) {
-                        e.printStackTrace();
+            String imgName = "";
+            String[] filePath = {getServletContext().getRealPath("/travel-images") + "\\large\\"};//地址
+            //String[] filePath = {"http:localhost:8080\\travel-images\\large\\"};//地址
+            Iterator iter = fileItems.iterator();
+            while (iter.hasNext()) {
+                FileItem fileItem = (FileItem) iter.next();
+                //如果是表单域，不是文件类型
+                if (fileItem.isFormField()) {
+                    //获取value值，声明代码编码
+                    String value = fileItem.getString("utf-8");
+                    switch (fileItem.getFieldName()) {
+                        case "title":
+                            picture.setTitle(value);
+                            break;
+                        case "content":
+                            picture.setContent(value);
+                            break;
+                        case "country":
+                            picture.setCountryName(value);
+                            break;
+                        case "region":
+                            picture.setCityName(value);
+                            break;
+                        case "description":
+                            picture.setDescription(value);
+                            break;
+                    }
+                } else {
+                    imgName = fileItem.getName();
+                    if (imgName != null && !imgName.equals("")) {
+                        picture.setPath(imgName);
+                        try {
+                            for (String path : filePath)
+                                fileItem.write(new File(path + imgName));
+                        } catch (Exception e) {
+                            e.printStackTrace();
+                        }
                     }
                 }
             }
-        }
 
-        PictureDAO.save(picture);
-        PictureDAO.createSquareImg(getServletContext().getRealPath("/travel-images")+"\\large\\"+imgName,getServletContext().getRealPath("/travel-images")+"\\square-medium\\"+imgName);
+            PictureDAO.save(picture);
+            PictureDAO.createSquareImg(getServletContext().getRealPath("/travel-images") + "\\large\\" + imgName, getServletContext().getRealPath("/travel-images") + "\\square-medium\\" + imgName);
+        }
         request.getRequestDispatcher("/myPhoto").forward(request, response);
     }
 

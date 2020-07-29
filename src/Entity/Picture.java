@@ -1,5 +1,7 @@
 package Entity;
 
+import java.sql.Timestamp;
+
 public class Picture {
     private String ID;
     private String title;
@@ -10,8 +12,9 @@ public class Picture {
     private String path;
     private String content;
     private int likePerson;
+    private Timestamp update;
 
-    public Picture(String ID, String title, String description, String cityName, String countryName, String author, String path, String content, int likePerson) {
+    public Picture(String ID, String title, String description, String cityName, String countryName, String author, String path, String content, int likePerson, Timestamp update) {
         this.ID = ID;
         this.title = title;
         this.description = description;
@@ -21,6 +24,7 @@ public class Picture {
         this.path = path;
         this.content = content;
         this.likePerson = likePerson;
+        this.update = update;
     }
 
     @Override
@@ -110,5 +114,13 @@ public class Picture {
 
     public void setContent(String content) {
         this.content = content;
+    }
+
+    public Timestamp getUpdate() {
+        return update;
+    }
+
+    public void setUpdate(Timestamp update) {
+        this.update = update;
     }
 }

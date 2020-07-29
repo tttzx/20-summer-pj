@@ -16,6 +16,14 @@
 
 <body>
 <%@include file="navbar.jsp" %>
+<%
+    if (session.getAttribute("username") != null) {
+
+%>
+<p>您已经登陆啦！</p>
+<%
+} else {
+%>
 <div class="container">
     <div class="page-header">
         <h1>注册账号：</h1><br>
@@ -56,13 +64,14 @@
         <div class="form-group">
             <label class="col-sm-2 control-label">验证码:</label>
             <div class="col-sm-5">
-                <input class="form-control" type="text" name="verify" id="verify" size="4" style="width: 30%" placeholder="请输入验证码……" required>
+                <input class="form-control" type="text" name="verify" id="verify" size="4" style="width: 30%"
+                       placeholder="请输入验证码……" required>
                 <canvas id="canvas" width="100px" height="50px"></canvas>
             </div>
         </div>
         <div class="form-group">
             <div class="col-sm-offset-2 col-sm-4">
-                <input type="submit" class="btn btn-primary"  value="提交">
+                <input type="submit" class="btn btn-primary" value="提交">
             </div>
         </div>
     </form>
@@ -70,9 +79,12 @@
         <a href="login.jsp">已有账号？去登陆吧</a>
     </div>
 </div>
-
+<%
+    }
+%>
 <script>
-    var namecheck=false;
+    var namecheck = false;
+
     function checkName() {
         var name = $("#name").val();
         var pattern = /^[a-zA-Z0-9_]{4,15}$/;
@@ -90,22 +102,23 @@
                     if (data === "NameOK") {
                         $("#nameGroup").removeClass("has-error");
                         $("#helpBlock1").html("");
-                        namecheck =true;
+                        namecheck = true;
                     } else {
                         $("#nameGroup").addClass("has-error");
                         $("#helpBlock1").html("用户名已存在");
-                        namecheck=false;
+                        namecheck = false;
                     }
                 }
             });
         } else {
             $("#nameGroup").addClass("has-error");
             $("#helpBlock1").html("用户名长度应当为 4 至 15 位");
-           namecheck=false;
+            namecheck = false;
         }
     }
 
-    var emailcheck=false;
+    var emailcheck = false;
+
     function checkEmail() {
         var email = $("#email").val();
         var pattern = /^([A-Za-z0-9_\-.\u4e00-\u9fa5])+@([A-Za-z0-9_\-.])+\.([A-Za-z]{2,8})$/;
@@ -123,11 +136,11 @@
                     if (data === "EmailOK") {
                         $("#emailGroup").removeClass("has-error");
                         $("#helpBlock2").html("");
-                        emailcheck =true;
+                        emailcheck = true;
                     } else {
                         $("#emailGroup").addClass("has-error");
                         $("#helpBlock2").html("该邮箱已注册");
-                        emailcheck=false;
+                        emailcheck = false;
                     }
                 }
             });

@@ -15,11 +15,22 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+
+<%
+    if (session.getAttribute("username") != null) {
+
+%>
+<p>您已经登陆啦！</p>
+<%
+} else{
+%>
 <div class="container">
+
     <div class="page-header">
         <h1>请登录：</h1><br>
     </div>
-    <form method="post" onsubmit="return checkLogin()" class="form-horizontal" role="form">
+
+    <form action="./login" method="post" onsubmit="return checkLogin()" class="form-horizontal" role="form">
         <div class="form-group">
             <label class="col-sm-2 control-label">Email/Username:</label>
             <div class="col-sm-5">
@@ -51,6 +62,9 @@
         <a href="register.jsp">没有账号？注册一个吧</a>
     </div>
 </div>
+<%
+    }
+%>
 <script>
     function checkLogin() {
         var status = false;
@@ -78,14 +92,15 @@
                 }
             });
             if (status) {
-                return true;
+                alert("登陆成功！");
+                self.location=document.referrer;
+                return false;
             } else {
                 alert("用户名或密码错误");
                 $('#password').val("");
                 return false;
             }
         }
-
     }
 
     //绘制验证码

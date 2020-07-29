@@ -17,9 +17,11 @@ public class MyPhotoServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         HttpSession session = request.getSession();
         String username= (String)session.getAttribute("username");
-        List<Picture> pictures = PictureDAO.findMyPhoto(username);
-        String json =PictureDAO.parseToJson(pictures);
-        request.setAttribute("myPictures",json);
+        if(username!=null) {
+            List<Picture> pictures = PictureDAO.findMyPhoto(username);
+            String json = PictureDAO.parseToJson(pictures);
+            request.setAttribute("myPictures", json);
+        }
         request.getRequestDispatcher("myphoto.jsp").forward(request, response);
     }
 

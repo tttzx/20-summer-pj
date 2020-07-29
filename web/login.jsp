@@ -15,10 +15,21 @@
 </head>
 <body>
 <%@include file="navbar.jsp" %>
+
+<%
+    if (session.getAttribute("username") != null) {
+
+%>
+<p>您已经登陆啦！</p>
+<%
+} else{
+%>
 <div class="container">
+
     <div class="page-header">
         <h1>请登录：</h1><br>
     </div>
+
     <form action="./login" method="post" onsubmit="return checkLogin()" class="form-horizontal" role="form">
         <div class="form-group">
             <label class="col-sm-2 control-label">Email/Username:</label>
@@ -51,38 +62,44 @@
         <a href="register.jsp">没有账号？注册一个吧</a>
     </div>
 </div>
+<%
+    }
+%>
 <script>
     function checkLogin() {
         var status = false;
         var message = $('#message').val();
         var password = $('#password').val();
-        $.ajax({
-            type: "post",
-            async: false,
-            url: "./loginCheck",
-            data: {"message": message, "password": password},
-            timeout: 30000,
-            data_type: 'json',
-            success: function (data) {
-                if (data === "OK") {
-                    status = true;
-                } else if (data === "NO") {
-                    status = false;
-                } else {
-                    status = false;
+        if ($('#verify').val() !== _picTxt) {
+            alert("验证码错误");
+            return false;
+        }else {
+            $.ajax({
+                type: "post",
+                async: false,
+                url: "./loginCheck",
+                data: {"message": message, "password": password},
+                timeout: 30000,
+                data_type: 'json',
+                success: function (data) {
+                    if (data === "OK") {
+                        status = true;
+                    } else if (data === "NO") {
+                        status = false;
+                    } else {
+                        status = false;
+                    }
                 }
-            }
-        });
-        if (status) {
-            if ($('#verify').val() !== _picTxt) {
-                alert("验证码错误");
+            });
+            if (status) {
+                alert("登陆成功！");
+                self.location=document.referrer;
+                return false;
+            } else {
+                alert("用户名或密码错误");
+                $('#password').val("");
                 return false;
             }
-            return true;
-        } else {
-            alert("用户名或密码错误");
-            $('#password').val("");
-            return false;
         }
     }
 

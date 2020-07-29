@@ -46,4 +46,10 @@
         $(this).removeClass('open');
     });
 
+    $('.navbar-nav li').mouseover(function () {
+        $(this).addClass('active');
+    }).mouseout(function () {
+        $(this).removeClass('active');
+    })
+
 </script>
