@@ -81,8 +81,9 @@ public class UpdateServlet extends HttpServlet {
                 }
             }
             PictureDAO.update(picture);
-            PictureDAO.createSquareImg(getServletContext().getRealPath("/travel-images") + "\\large\\" + imgName, getServletContext().getRealPath("/travel-images") + "\\square-medium\\" + imgName);
+            PictureDAO.createSquareImg(getServletContext().getRealPath("/travel-images/large/") + "" + imgName, getServletContext().getRealPath("/travel-images/square-medium/") + "" + imgName);
         }
+
         request.getRequestDispatcher("/myPhoto").forward(request, response);
     }
 

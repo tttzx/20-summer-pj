@@ -1445,8 +1445,6 @@
     <column id="351" parent="284" name="updateTime">
       <Position>12</Position>
       <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <DefaultExpression>CURRENT_TIMESTAMP</DefaultExpression>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="352" parent="284" name="CityCode">
