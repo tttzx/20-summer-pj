@@ -35,6 +35,7 @@
             <hr>
             <div class="row">
                 <h5 class="col-md-2">允许好友查看：</h5>
+
                 <select class="col-md-10 form-control" id="limit" style="width: 10%" name="limit"
                         onchange="changeState()">
                     <%

@@ -27,7 +27,7 @@ public class RegServlet extends HttpServlet {
             request.setAttribute("info","Sorry,You has been registered!");
         }
 
-        request.getRequestDispatcher("message.jsp").forward(request,response);
+        request.getRequestDispatcher("index.jsp").forward(request,response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

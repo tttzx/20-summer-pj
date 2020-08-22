@@ -35,6 +35,8 @@
             <hr>
             <div class="row">
                 <h5 class="col-md-2">允许好友查看：</h5>
+                <input type="checkbox" name="my-checkbox" checked>
+
                 <select class="col-md-10 form-control" id="limit" style="width: 10%" name="limit"
                         onchange="changeState()">
                     <%
@@ -83,6 +85,13 @@
     </div>
 </div>
 <script type="text/javascript">
+    $('input[name="my-checkbox"]').bootstrapSwitch({
+        "onColor" : "success",
+        "offColor" : "success",
+        "onText" : "男",
+        "offText" : "女"
+    });
+
     var pageSize = 3;
     var totalCount;
     var totalPage;
